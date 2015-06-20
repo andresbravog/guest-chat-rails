@@ -39,5 +39,6 @@ group :development, :test do
 
   # Test frameworks
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-its'
   gem 'capybara'
 end
