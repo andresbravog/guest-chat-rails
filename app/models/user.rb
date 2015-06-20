@@ -10,7 +10,7 @@ require 'active_model/validations'
 class User
   include ActiveModel::Validations
 
-  attr_accessor :username, :dialect
+  attr_accessor :username, :dialect, :attributes
 
   validates :username, :dialect, presence: true
   validates :username, length: { in: 7..32 }
