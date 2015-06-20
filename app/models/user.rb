@@ -5,6 +5,8 @@ require 'active_model/validations'
 # Usage:
 #
 # user = User.new(username: 'andresbravog', dialect: :yoda)
+# user.valid?
+#
 class User
   include ActiveModel::Validations
 
