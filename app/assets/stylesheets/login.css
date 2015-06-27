@@ -1,12 +1,12 @@
-article, 
-aside, 
-details, 
-figcaption, 
-figure, 
-footer, 
-header, 
-hgroup, 
-nav, 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
 section {
     display: block;
 }
@@ -17,23 +17,23 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-input:focus, 
+input:focus,
 textarea:focus {
     outline: none;
 }
 
-label, 
-select, 
-button, 
-input[type="submit"], 
-input[type="radio"], 
-input[type="checkbox"] 
+label,
+select,
+button,
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"]
 input[type="button"] {
     cursor: pointer;
 }
 
-a, 
-a:visited, 
+a,
+a:visited,
 a:active {
     text-decoration: none;
 }
@@ -52,7 +52,7 @@ a:hover {
     color: #fff;
 }
 
-* {
+.login-form * {
     font-size:100%;
     margin: 0;
     padding: 0;
@@ -68,22 +68,22 @@ body {
   font-family:"Helvetica Neue", Helvetica, Arial;
 }
 
-h5 {
+.login-form h5 {
   text-align:center;
   margin-top:5px;
   color:rgba(0,0,0,.3);
 }
 
-h5 > a,a:visited {
+.login-form h5 > a,a:visited {
   color:#fff;
   text-decoration:underline;
 }
 
-h5 > a:hover {
+.login-form h5 > a:hover {
   text-decoration:none;
 }
 
-form {
+.login-form form {
   background:#fff;
   border-radius:6px;
   padding:20px;
@@ -93,7 +93,7 @@ form {
   box-shadow:15px 15px 0px rgba(0,0,0,.1);
 }
 
-h1 {
+.login-form h1 {
   text-align:center;
   font-size:1.4em;
   font-weight:700;
@@ -101,11 +101,11 @@ h1 {
   margin-bottom:24px;
 }
 
-span {
+.login-form span {
   font-weight:200;
 }
 
-input {
+.login-form input {
   width:100%;
   background:#f5f5f5;
   border:0;
@@ -115,7 +115,7 @@ input {
   border:1px solid #eee;
 }
 
-.btn {
+.login-form .btn {
   position:relative;
   width:100%;
   padding:20px;
@@ -128,12 +128,12 @@ input {
   box-shadow:0px 3px 0px #c1524e;
 }
 
-.btn:active {
+.login-form .btn:active {
   top:3px;
   box-shadow:none;
 }
 
-h6 {
+.login-form h6 {
   text-align:center;
   padding:20px;
   padding-top:35px;
@@ -141,32 +141,16 @@ h6 {
   cursor:pointer;
 }
 
-.social {
+.login-form .social {
   display:none;
 }
 
-.fb {
-  margin-top:15px;
-  background:#3b5998;
-  box-shadow:0px 3px 0px #2c416e;
-}
-
-.tw {
-  background:#00acee;
-  box-shadow:0px 3px 0px #008dc3;
-}
-
-.google {
-  background:#db4a39;
-  box-shadow:0px 3px 0px #b93f31;
-}
-
-.dialect_picker {
+.login-form .dialect_picker {
   width: 100%;
   margin: 15px 0;
 }
 
-.dialect_picker select {
+.login-form .dialect_picker select {
   width: 100%;
   padding: 19px;
   color: #A8A6A6;
