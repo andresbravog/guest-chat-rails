@@ -35,4 +35,8 @@ class User
   def to_hash
     self.attributes
   end
+
+  def to_key
+    [username]
+  end
 end

@@ -1,1 +1,20 @@
-hello
+<div class='form-errors'>
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+
+<%= form_for @user, url: create_session_path do |f| %>
+  <h1>
+    <span>Login</span> to Dialect chatroom
+  </h1>
+  <%= text_field_tag :username, @user.username, placeholder: 'Username' %>
+  <span class="custom-dropdown big dialect_picker">
+    <%= select_tag :dialect, options_for_select(ALLOWED_DIALECTS), include_blank: 'Pick a dialect' %>
+  </span>
+  <%= f.submit 'Log in', class: 'btn' %>
+<% end %>
