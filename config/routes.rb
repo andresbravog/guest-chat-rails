@@ -57,4 +57,6 @@ Rails.application.routes.draw do
   get 'login'            => 'sessions#new',     as: :login
   delete 'logout'        => 'sessions#destroy', as: :logout
   post 'sessions/create' => 'sessions#create',  as: :create_session
+
+  # resources :messages, only: [:create]
 end
