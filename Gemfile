@@ -24,6 +24,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'params_for'
 # Css font icons
 gem "font-awesome-rails"
+# js lib to handle scroll bars
+gem 'jscrollpane-rails'
+# Date js handle
+gem 'momentjs-rails'
+# Websockets
+gem 'faye-rails', '~> 2.0'
+gem 'faye', git: 'git@github.com:faye/faye.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,5 +52,5 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-its'
   gem 'capybara'
-
+  gem 'thin'
 end

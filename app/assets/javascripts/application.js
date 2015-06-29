@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require faye
+//= require moment
+//= require jquery.jscrollpane
+//= require chatroom
