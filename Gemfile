@@ -30,7 +30,10 @@ gem 'jscrollpane-rails'
 gem 'momentjs-rails'
 # Websockets
 gem 'faye-rails', '~> 2.0'
+# Use master version because of problems with rails 4.2
 gem 'faye', git: 'git@github.com:faye/faye.git'
+# Gem to pass vars form rails controllers to js files
+gem 'gon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
