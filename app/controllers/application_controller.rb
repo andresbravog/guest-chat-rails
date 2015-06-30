@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!, only: [:index]
+  before_action :define_js_user_data, only: [:index]
 
   # GET /
   def index
@@ -16,6 +17,15 @@ class ApplicationController < ActionController::Base
   def current_user
     return nil unless session[:username].present?
     @current_user ||= User.new(session)
+  end
+
+  # Pass user variables to the js files
+  #
+  def define_js_user_data
+    gon.push({
+      :username => current_user.try(:username),
+      :dialect => current_user.try(:dialect)
+    })
   end
 
   # Checks current user or redirect to login path
