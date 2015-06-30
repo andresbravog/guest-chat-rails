@@ -17,3 +17,4 @@
 //= require moment
 //= require jquery.jscrollpane
 //= require chatroom
+//= require user
