@@ -4,9 +4,11 @@ $(function()
 {
 	client.subscribe('/messages', function(payload) {
 		if(payload.message) {
-			time = moment(payload.created_at).format('D/M/YYYY H:mm:ss')
-			$('.chat-area').find('.chat-list ul').append(
-				  "<li class='me'>"
+			var time = moment(payload.created_at).format('D/M/YYYY H:mm:ss')
+			  , klass =  (payload.username == DialectChat.User.username) ? "me" : ""
+				, list = $('.chat-list');
+			list.find('ul').append(
+				  "<li class='" + klass + "'>"
 				+ "	<div class='name'>"
 				+ "		<span class=''>"
 				+       payload.username
@@ -22,6 +24,8 @@ $(function()
 				+ "	</div>"
 				+ "</li>"
 			);
+			// Animate messages list to the bottom
+			list.animate({ scrollTop: list.prop('scrollHeight') }, 1000);
 		}
 	});
 
@@ -38,7 +42,9 @@ $(function()
 		// Publish message
 		publisher = client.publish('/messages', {
 		  message: input.val(),
-		  created_at: new Date()
+		  created_at: new Date(),
+			username: DialectChat.User.username,
+			dialect: DialectChat.User.dialect,
 		});
 		// Handle callback
 		publisher.callback(function() {
