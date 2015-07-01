@@ -29,6 +29,34 @@ $(function()
 		}
 	});
 
+	client.subscribe('/users/' + DialectChat.User.username , function(payload) {});
+
+	client.subscribe('/users' , function(payload) {
+			var klass =  (payload.username === DialectChat.User.username) ? "me" : ""
+				, list = $('.user-list')
+				, action = payload.action;
+			switch(action) {
+	    case 'add':
+			    if (klass === 'me') { break; }
+					if ($('#user-' + payload.username).size() > 0) { break; }
+					list.append(
+							"<li id='user-" + payload.username + "'>"
+						+ "<a href='#'>"
+						+ "	<i class='fa fa-circle-o online'></i>"
+						+ "	<span>"
+						+     payload.username
+						+ " </span>"
+						+ "</a>"
+						+ "</li>"
+					);
+	        break;
+	    case 'remove':
+					if (klass === 'me') { break; }
+	        $('#user-' + payload.username).remove();
+	        break;
+			};
+	});
+
 
 	// Init some form vars
 	var form = $("form.new-message-form");

@@ -15,10 +15,15 @@
   <div class="window-area">
     <div class="conversation-list">
       <ul class="user-list">
-        <li><a href="#"><i class="fa fa-circle-o online"></i></i><span>Cucu Ionel</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o idle"></i></i><span>Jan Dvořák</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o offline"></i></i><span>Clark Kent</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o offline"></i></i><span>Ioana Marcu</span></a></li>
+        <% for user in OnlineUser.all do %>
+          <% next if user.username == @current_user.username %>
+          <li id="user-<%= user.username %>">
+            <a href="#">
+              <i class="fa fa-circle-o online"></i>
+              <span><%= user.username %></span>
+            </a>
+          </li>
+        <% end %>
       </ul>
       <div class="my-account">
         <div class="image">
@@ -35,26 +40,7 @@
     <div class="chat-area">
       <div class="title"><b>Guests chatroom</b></div>
       <div class="chat-list">
-        <ul>
-          <li class="me">
-            <div class="name">
-              <span class="">Cucu Ionel</span>
-            </div>
-            <div class="message">
-              <p>Hey, do you like the new interface? It's done with Font Awesome.</p>
-              <span class="msg-time">5:00 pm</span>
-            </div>
-          </li>
-          <li class="">
-            <div class="name">
-              <span class="">Christian Smith</span>
-            </div>
-            <div class="message">
-              <p>Yeah, will do.</p>
-              <span class="msg-time">5:04 pm</span>
-            </div>
-          </li>
-        </ul>
+        <ul></ul>
       </div>
       <div class="input-area">
         <form class="new-message-form" action="index.html" method="post">

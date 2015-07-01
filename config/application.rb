@@ -33,6 +33,8 @@ module GuestChatRails
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25 do
       map '/messages' => RealtimeMessagesController
+      map '/users/**' => RealtimeUsersController
+      map '/users' => RealtimeUsersController
       map default: :block
     end
   end
