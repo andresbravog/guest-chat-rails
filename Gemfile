@@ -34,6 +34,8 @@ gem 'faye-rails', '~> 2.0'
 gem 'faye', git: 'git@github.com:faye/faye.git'
 # Gem to pass vars form rails controllers to js files
 gem 'gon'
+# Soap client to interact with translate API's
+gem 'savon', '~> 2.10.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
