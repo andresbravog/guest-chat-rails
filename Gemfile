@@ -36,6 +36,8 @@ gem 'faye', git: 'git@github.com:faye/faye.git'
 gem 'gon'
 # Soap client to interact with translate API's
 gem 'savon', '~> 2.10.0'
+# Rest api client
+gem 'rest-client'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
